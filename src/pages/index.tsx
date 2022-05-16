@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Link } from "gatsby";
+import { Link, useStaticQuery, graphql } from "gatsby";
 
 // styles
 const pageStyles = {
@@ -128,10 +128,22 @@ const links = [
 
 // markup
 const IndexPage = () => {
+  const data = useStaticQuery(graphql`
+    query {
+      site {
+        siteMetadata {
+          title
+        }
+      }
+    }
+  `);
+
   return (
     <main style={pageStyles}>
+      <title>{data.site.siteMetadata.title}</title>
+      <header>{data.site.siteMetadata.title}</header>
       <Link to="/blog">Blog</Link>
-      <h1 className="text-3xl font-bold underline">Hi I am 黎健大帅比</h1>
+      <h1 className="text-3xl font-bold underline">Hi I am</h1>
 
       <h1 style={headingStyles}>
         Congratulations
