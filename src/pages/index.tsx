@@ -131,7 +131,7 @@ const IndexPage = () => {
   return (
     <main style={pageStyles}>
       <Link to="/blog">Blog</Link>
-      <h1>Hi I am linchengfu</h1>
+      <h1 className="text-3xl font-bold underline">Hi I am 黎健大帅比</h1>
 
       <h1 style={headingStyles}>
         Congratulations
